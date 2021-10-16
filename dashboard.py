@@ -1,17 +1,15 @@
-from datetime import timedelta
-
+import os
 import streamlit as st
-from requests_cache import CachedSession
 
-from stocktwits_dashboard import load_stocktwits_dashboard
-from twitter_dashboard import load_twitter_dashboard
+root = os.path.join(os.path.dirname(__file__))
+dashboards = {
+    "Twitter": os.path.join(root, "twitter_dashboard.py"),
+    "Stocktwits": os.path.join(root, "stocktwits_dashboard.py"),
+    "Telegram": os.path.join(root, "telegram_dashboard.py")
+}
 
-cached_session = CachedSession(expire_after=timedelta(days=1))
+choice = st.sidebar.selectbox("Which Dashboard?", list(dashboards.keys()), 2)
 
-option = st.sidebar.selectbox("Which Dashboard?", ('twitter', 'stocktwits'), 1)
-st.header(option)
-
-if option == 'twitter':
-    load_twitter_dashboard()
-elif option == 'stocktwits':
-    load_stocktwits_dashboard(cached_session)
+path = dashboards[choice]
+with open(path, encoding="utf-8") as code:
+    exec(code.read(), globals())

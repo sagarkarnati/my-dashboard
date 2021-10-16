@@ -7,3 +7,6 @@ numpy==1.20.2
 pandas==1.2.4
 plotly==5.3.1
 tweepy==4.1.0
+streamlit-aggrid==0.2.2.post2
+mysql-connector-python==8.0.23
+timeago==1.0.15
