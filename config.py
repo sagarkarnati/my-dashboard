@@ -4,6 +4,7 @@ TWITTER_ACCESS_TOKEN = '748120678730194944-F50YqFbhfxUvuqLeX534jc4Kcj6Ax0m'
 TWITTER_ACCESS_TOKEN_SECRET = 'gJMqBwSsC7OoEDdIPgpcIYvM0eQkF2y5sCV9AUZYEQV5L'
 
 TWITTER_USERNAMES = [
+    'SRStockAlertBot',
     'traderstewie',
     'the_chart_life',
     'canuck2usa',

@@ -8,7 +8,7 @@ dashboards = {
     "Telegram": os.path.join(root, "telegram_dashboard.py")
 }
 
-choice = st.sidebar.selectbox("Which Dashboard?", list(dashboards.keys()), 2)
+choice = st.sidebar.selectbox("Which Dashboard?", list(dashboards.keys()), 0)
 
 path = dashboards[choice]
 with open(path, encoding="utf-8") as code:
