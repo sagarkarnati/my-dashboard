@@ -1,14 +1,15 @@
 import mysql.connector
+import config
 
 
 class DBUtils:
     def get_connection(self):
         try:
-            cnx = mysql.connector.connect(user='root',
-                                          password='rdskpS4ZEQxeHVdZ',
-                                          host='34.73.60.55',
-                                          port=3306,
-                                          database='FINANCE')
+            cnx = mysql.connector.connect(user=config.DB_USER,
+                                          password=config.DB_PWD,
+                                          host=config.DB_HOST,
+                                          port=config.DB_PORT,
+                                          database=config.DB_DATABASE)
         except mysql.connector.Error as err:
             if err.errno == mysql.connector.errorcode.ER_ACCESS_DENIED_ERROR:
                 print("Something is wrong with your user name or password")
