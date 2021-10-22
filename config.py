@@ -19,5 +19,3 @@ TWITTER_USERNAMES = [
     'sunrisetrader',
     'tmltrader',
 ]
-
-
