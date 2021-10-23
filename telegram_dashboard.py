@@ -7,7 +7,6 @@ from repository.telegram_data_repository import TelegramDataRepository
 date = datetime.datetime.utcnow()
 telegram_data_repo = TelegramDataRepository()
 
-st.subheader('Feed')
 channel_name = st.sidebar.selectbox("Channel", list(telegram_data_repo.get_all_channels()), 0)
 st.subheader(channel_name)
 telegram_data_list = telegram_data_repo.get_telegram_data(channel_name=channel_name, start_date=None)
