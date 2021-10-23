@@ -6,7 +6,6 @@ import tweepy
 import config
 import timeago
 
-st.write(config.TWITTER_CONSUMER_KEY)
 auth = tweepy.OAuthHandler(config.TWITTER_CONSUMER_KEY, config.TWITTER_CONSUMER_SECRET)
 auth.set_access_token(config.TWITTER_ACCESS_TOKEN, config.TWITTER_ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
